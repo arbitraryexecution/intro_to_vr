@@ -6,7 +6,7 @@ pragma solidity ^0.8.7;
  * @title Storage
  * @dev Store & retrieve value in a variable
  */
-contract ArrayHelper {
+contract ArrayUtil {
     /**
      * @dev Search for the index of target in array
      * @param target element we are looking for
@@ -57,5 +57,21 @@ contract ArrayHelper {
             }
         }
         return false;
+    }
+
+    /**
+     * Imagine a bunch more array utility functions in the library implemented here
+     */
+
+
+    // *** ECHIDNA FUZZING BELOW ***
+    bool mismatch = false;
+
+    function merge(uint256[] calldata array) public {
+        // implement differntial fuzzing here
+    }
+
+    function echidna_convert() public returns (bool){
+        return mismatch == false;
     }
 }
