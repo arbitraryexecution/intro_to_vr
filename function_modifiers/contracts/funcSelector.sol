@@ -10,27 +10,52 @@ contract Something {
         owner = msg.sender;
     }
 
-    function foo() public view returns (uint) {
+    function a(int num) public view returns (uint) {
         return 1;
     }
 
-    function bar() public pure returns (uint) {
+    function b(int num) public pure returns (uint) {
         return 2;
     }
 
-    function baz() external pure returns (uint) {
+    function c(int num) external view returns (uint) {
         return 3;
     }
 
-    function x() internal pure returns (uint) {
+    function d(int num) external pure returns (uint) {
         return 4;
     }
 
-    function y() private pure returns (uint) {
+    function e(int num) internal pure returns (uint) {
         return 5;
     }
 
-    function z() public payable returns (uint) {
+    function f(int num) internal view returns (uint) {
         return 6;
+    }
+
+    function g(int num) private pure returns (uint) {
+        return 7;
+    }
+
+    function h(int num) private view returns (uint) {
+        return 8;
+    }
+
+    function unused() internal returns (uint) {
+        return 9;
+    }
+
+    function z() public payable returns (uint) {
+        a(4919);
+        b(4919);
+        this.c(4919);
+        this.d(4919);
+        e(4919);
+        f(4919);
+        g(4919);
+        g(4919);
+
+        return 255;
     }
 }
