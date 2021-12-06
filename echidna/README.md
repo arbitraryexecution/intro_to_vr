@@ -2,6 +2,11 @@
 2. install requirements 
 
 - `python3 -m pip install -r ./requirements.txt`
+3. Try using the `solc-select` command
+
+- If `solc-select` doesn't show up you must add your `~/.local/bin` to your $PATH
+- `echo "export PATH=\$PATH:/home/$(whoami)/.local/bin" >> ~/.bashrc`
+- `source ~/.bashrc`
 3. set up sol c compiler 
 
 - `solc-select install 0.7.6`
