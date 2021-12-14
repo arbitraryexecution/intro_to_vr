@@ -42,8 +42,8 @@ contract SimpleBank {
      */
     modifier checkMinimumAndUnderflow(uint256 amount) {
         // check for minimum balance
-        require(balances[msg.sender] > minimumBalance, "Can't burn if you have less than the minimum balance");
-        require(balances[msg.sender] - amount >= minimumBalance, "Cannot burn under minimum balance");
+        require(balances[msg.sender] > minimumBalance, "Can't remove funds if you have less than the minimum balance");
+        require(balances[msg.sender] - amount >= minimumBalance, "Cannot remove funds under minimum balance");
 
         // check for underflow
         require(amount < balances[msg.sender] + minimumBalance, "Underflow detected! Reverting!");
