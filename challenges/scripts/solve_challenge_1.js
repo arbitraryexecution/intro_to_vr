@@ -6,16 +6,9 @@
 const hre = require("hardhat");
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
 
-  // We get the contract to deploy
-
-  const addr = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  // XXX: Insert address here
+  const addr = "0x0";
   if (addr == "0x0") {
     console.log("Please set the contract addr");
     return;
@@ -27,9 +20,10 @@ async function main() {
 
   var ch2 = new ethers.Contract(addr, abi, wallet);
 
-  var func_selector = "0x1ab0cb3a"
-  var answer = 1234
-  var packed_data = ethers.utils.solidityPack(["bytes4", "uint"], [func_selector, answer]);
+  // XXX: Insert function selector here
+  var func_selector = "0x0";
+  // XXX: Pack the function selector and any args here (replace with correct values and the correct number of args)
+  var packed_data = ethers.utils.solidityPack(["bytes4", "uint", "uint", "uint"], [func_selector, 1, 2, 3]);
 
   var tx = await wallet.sendTransaction({
     to: ch2.address,

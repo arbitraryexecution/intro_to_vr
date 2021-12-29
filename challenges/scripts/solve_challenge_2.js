@@ -15,7 +15,8 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const addr = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6";
+  // XXX: Insert address here
+  const addr = "0x0";
   if (addr == "0x0") {
     console.log("Please set the contract addr");
     return;
@@ -27,12 +28,13 @@ async function main() {
 
   var ch2 = new ethers.Contract(addr, abi, wallet);
 
-  var func_selector = "0xe6581e4c"
-  var answer = 10;
-  var packed_data = ethers.utils.solidityPack(["bytes4", "uint"], [func_selector, answer]);
+  // XXX: Insert function selector here
+  var func_selector = "0x0"
+  // XXX: Pack the function selector and any args here (replace with correct values and the correct number of args)
+  var packed_data = ethers.utils.solidityPack(["bytes4", "uint", "uint", "uint"], [func_selector, 1, 2, 3]);
 
+  // XXX: One additional override must be set here
   var tx = await wallet.sendTransaction({
-    value: ethers.utils.parseUnits("1", "wei"),
     to: ch2.address,
     data: packed_data,
   });
