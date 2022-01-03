@@ -59,7 +59,7 @@ contract ArrayUtil {
         return false;
     }
 
-    /**
+    /*
      * Imagine a bunch more array utility functions in the library implemented here
      */
 
