@@ -44,13 +44,13 @@ $ ./mac/echidna-test ./lab2.sol
 The following will add `solc-select` to your `$PATH` and will also use the solc installed by that
 binary over any global installs of `solc`
 
-Linux: If `solc-select` does not display as shown above, ensure `~/.local/bin` is in `$PATH`
+> Linux: If `solc-select` does not display as shown above, ensure `~/.local/bin` is in `$PATH`
 ```
 $ echo "export PATH=/home/$(whoami)/.local/bin:\$PATH" >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
-Mac: If `solc-select` does not display as shown above, ensure `/opt/homebrew/bin` is in `$PATH`
+> Mac: If `solc-select` does not display as shown above, ensure `/opt/homebrew/bin` is in `$PATH`
 ```
 $ echo "export PATH=/home/$(whoami)/.local/bin:\$PATH" >> ~/.zshrc
 $ source ~/.zshrc
@@ -60,8 +60,8 @@ $ source ~/.zshrc
 It is likely that a different solc binary is being used instead of the version installed by
 `solc-select`. Ensure the path to the `solc` binary installed by `solc-select` is the first path in
 the `$PATH` variable.
-Linux install directory: `~/.local/bin`
-Mac install directory: `/opt/homebrew/bin`
+> Linux install directory: `~/.local/bin` \
+> Mac install directory: `/opt/homebrew/bin`
 ```
 # Determine file path being used
 $ which solc
