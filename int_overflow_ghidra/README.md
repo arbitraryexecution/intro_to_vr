@@ -1,15 +1,24 @@
-# Basic Sample Hardhat Project
+# Description
+Very simple token that partially implements the ERC20 spec.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+# Setup
 
-Try running some of the following tasks:
+## Install Dependencies
+```
+$ npm i
+```
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+## Compile contracts
+```
+$ npx hardhat compile
+```
+
+## Clean build artifacts
+```
+$ npx hardhat clean
+```
+
+## Convert bytecode hex to bytes to be used by Ghidra
+```
+$ python3 ../convert_hex_to_bin.py <input_file.hex> <output_file.evm>
 ```

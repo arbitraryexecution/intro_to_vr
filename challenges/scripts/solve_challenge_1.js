@@ -35,8 +35,8 @@ async function main() {
   let iface = new ethers.utils.Interface(abi);
   let log;
   if (rec.logs.length != 0) {
-    log = iface.parseLog(rec.logs[0]); // here you can add your own logic to find the correct log
-    console.log('Beat the challenge, Winner event emitted!')
+    log = iface.parseLog(rec.logs[0]); // Here you can add your own logic to find the correct log
+    console.log('Beat the challenge; Winner event emitted!')
   }
 }
 
