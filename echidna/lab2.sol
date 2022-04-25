@@ -8,9 +8,9 @@ pragma solidity ^0.7.6;
  */
 contract ArrayUtil {
     /**
-     * @dev Search for the index of target in array
-     * @param target element we are looking for
-     * @param array array we are looking in
+     * @dev Search for the index of target in array starting from the beginning (left to right)
+     * @param target - The element we are looking for in the array
+     * @param array - The array which holds the elements to search
      */
     function indexOf(uint256 target, uint256[] calldata array) public pure returns (int256){
         require(array.length < 0xffffffffffffffff, "Array must not be larger than most positive int256");
@@ -25,9 +25,9 @@ contract ArrayUtil {
     }
 
     /**
-     * @dev Search for the index of target in array starting from the end
-     * @param target element we are looking for
-     * @param array array we are looking in
+     * @dev Search for the index of target in array starting from the end (right to left)
+     * @param target - The element we are looking for in the array
+     * @param array - The array which holds the elements to search
      */
     function indexOfFromEnd(uint256 target, uint256[] calldata array) public pure returns (int256){
         require(array.length < 0xffffffffffffffff, "Array must not be larger than most positive int256");
@@ -42,8 +42,8 @@ contract ArrayUtil {
     }
 
     /**
-     * @dev Check if array has duplicates
-     * @param array array we are checking for duplicates
+     * @dev Check if the array has any duplicate elements
+     * @param array - The array we are checking for duplicates
      */
     function duplicates(uint256[] calldata array) public pure returns (bool){
         require(array.length < 0xffffffffffffffff, "Array must not be larger than most positive int256");
@@ -67,11 +67,11 @@ contract ArrayUtil {
     // *** ECHIDNA FUZZING BELOW ***
     bool mismatch = false;
 
-    function merge(uint256[] calldata array) public {
+    function testBehavior(uint256[] calldata array) public {
         // implement differntial fuzzing here
     }
 
-    function echidna_convert() public returns (bool){
+    function echidna_test() public returns (bool){
         return mismatch == false;
     }
 }

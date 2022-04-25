@@ -8,6 +8,8 @@ if len(sys.argv) != 3:
 
 # Make sure the first arg is the file and ensure it exists
 input_fpath = sys.argv[1]
+output_fpath = sys.argv[2]
+
 if not os.path.isfile(input_fpath):
     sys.exit(f"ERROR: {input_fpath} is not a valid file!")
 
@@ -22,7 +24,7 @@ if data[:2] == "0x":
 data = data.rstrip()
 data_bytes = binascii.a2b_hex(data)
 
-with open(sys.argv[2], "wb") as f:
+with open(output_fpath, "wb") as f:
     f.write(data_bytes)
 
-print(f"Finished creating file: {sys.argv[2]}")
+print(f"Finished creating file: {output_fpath}")
