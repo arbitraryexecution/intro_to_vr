@@ -7,14 +7,7 @@ const { ethers } = require("hardhat");
 const hre = require("hardhat");
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
 
-  // We get the contract to deploy
   // XXX: Insert address here
   const addr = "0x0";
   if (addr == "0x0") {
@@ -44,7 +37,7 @@ async function main() {
   let iface = new ethers.utils.Interface(abi);
   let log;
   if (rec.logs.length != 0) {
-    log = iface.parseLog(rec.logs[0]); // here you can add your own logic to find the correct log
+    log = iface.parseLog(rec.logs[0]); // Here you can add your own logic to find the correct log
     console.log('Beat the challenge, Winner event emitted!')
   }
 }

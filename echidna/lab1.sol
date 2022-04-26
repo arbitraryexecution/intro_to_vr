@@ -4,7 +4,7 @@ pragma solidity ^0.7.6;
 
 /**
  * @title WeakCTF
- * @dev Weak CTF to introduce echidna
+ * @dev Weak CTF used to introduce echidna
  */
 contract WeakCTF {
     uint256 flopCount;
@@ -15,7 +15,7 @@ contract WeakCTF {
 
     /**
      * @dev Sets gate 1
-     * @param status boolean to set gate1 to
+     * @param status - The boolean value to set gate1 to
      */
     function setGate1(bool status) public {
         if (status != gate1) {
@@ -26,7 +26,7 @@ contract WeakCTF {
 
     /**
      * @dev Sets gate 2
-     * @param status boolean to set gate2 to
+     * @param status - The boolean value to set gate2 to
      */
     function setGate2(bool status) public {
         if (status != gate2) {
@@ -37,7 +37,7 @@ contract WeakCTF {
  
     /**
      * @dev Sets luckyNumber
-     * @param number uint8 to set luckyNumber
+     * @param number - The value to set the luckyNumber storage variable to
      */
     function setLuckyNumber(uint8 number) public {
         luckyNumber = number;

@@ -20,26 +20,31 @@ contract SimpleBank {
 
     /**
      * @dev Withdraw funds from contract
-     * @param amount amount of value to withdraw
+     * @param amount - The amount of ether to withdraw
      */
     function withdraw(uint256 amount) public checkMinimumAndUnderflow(amount) {
         balances[msg.sender] -= amount;
 
         (bool sent,) = payable(msg.sender).call{value: amount}("");
-        require(sent, "Failed to send Ether");
+        require(sent, "Failed to withdraw Ether");
     }
 
     /**
-     * @dev Burns a number of tokens
-     * @param amount amount to burn
+     * @dev Burns a specified amount of ETH - This will cause the balance of msg.sender
+     *      to be deducted but the ETH will still be held by the contract
+     * @param amount - The amount to ether to burn
      */
     function burn(uint256 amount) public checkMinimumAndUnderflow(amount) {
         balances[msg.sender] -= amount;
     }
 
     /**
-     * @dev Checks for minimum balance after operation and mathematical underflows
-     * @param amount amount expected to leave the msg.sender's balance
+     * @dev Checks for to ensure that:
+     *          - msg.sender has a least the specified minimum balance
+     *          - The remaining balance after amount is subtracted from the balance is still over
+     *            the minimumBalance
+     *          - The specified amount of ether to deduct does not cause an underflow
+     * @param amount - The amount expected to deduct from the msg.sender's balance
      */
     modifier checkMinimumAndUnderflow(uint256 amount) {
         // check for minimum balance
@@ -60,6 +65,6 @@ contract SimpleBank {
     }
 
     // TODO 
-    // 1. track totalDeposited
-    // 2. implement logic in echidna_test to return false if an incorrect state arises
+    // 1. Track total amount of ether deposited to the contract
+    // 2. Implement logic in echidna_test to return false if an incorrect state arises
 }

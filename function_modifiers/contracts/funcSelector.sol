@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract Something {
+contract Functions {
     address public owner;
     uint blockNumber = 1337;
     constructor() {
